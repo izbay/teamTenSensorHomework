@@ -6,10 +6,11 @@ public class agentController : MonoBehaviour {
 	public float turnSpeed;
 	public float moveSpeed;
 	public KeyCode controlKey;
+	public KeyCode abortKey;
 
 	void Update () {
 		// Handle if W and S are both held.
-		if(Input.GetKey (controlKey)){
+		if(Input.GetKey (controlKey) && !Input.GetKey (abortKey)){
 			int dir_motion = 0;
 			if (Input.GetKey (KeyCode.W))
 				dir_motion++;

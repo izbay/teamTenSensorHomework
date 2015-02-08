@@ -7,7 +7,8 @@ public class subjectController : MonoBehaviour {
 	public float turnSpeed;
 	public float moveSpeed;
 	public Text UItext;
-
+	public KeyCode abortKey1;
+	public KeyCode abortKey2;
 
 	private float curr_rot;
 	private float curr_x;
@@ -19,7 +20,7 @@ public class subjectController : MonoBehaviour {
 
 	void Update () {
 		// Handle if W and S are both held.
-		if(!(Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.Space))){
+		if(!(Input.GetKey (abortKey1) || Input.GetKey (abortKey2))){
 			int dir_motion = 0;
 			if (Input.GetKey (KeyCode.W))
 				dir_motion++;
