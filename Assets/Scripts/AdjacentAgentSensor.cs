@@ -33,7 +33,10 @@ public class AdjacentAgentSensor : MonoBehaviour {
 		foreach (Transform t in adjacentAgents)
 		{
 			Vector3 distance = t.position - transform.position;
-			output = output + "(" + distance.magnitude.ToString("F1") + ")";
+			double bearing = ((distance.y>0)?1:-1) * Vector3.Angle(Vector3.right,distance);
+				   bearing = (bearing + 360) % 360;             
+			output = output + "D=" + distance.magnitude.ToString("F1");
+			output = output + ",B=" + bearing.ToString ("F1")+"\n";
 		}
 		
 		UItext.text = output;
