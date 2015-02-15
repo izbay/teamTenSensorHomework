@@ -28,7 +28,7 @@ public class AdjacentAgentSensor : MonoBehaviour {
 	
 	void UpdateGUI ()
 	{
-		string output = "Detected Agents:\n";
+		string output = "Adjacent Agents:\n";
 		double parent_rot = transform.parent.rotation.eulerAngles.z;
 
 		foreach (Transform t in adjacentAgents)

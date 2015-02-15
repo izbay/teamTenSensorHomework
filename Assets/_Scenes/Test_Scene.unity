@@ -292,6 +292,64 @@ Prefab:
   m_RootGameObject: {fileID: 1775048320}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &453685997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 453685998}
+  - 58: {fileID: 453686000}
+  - 114: {fileID: 453685999}
+  m_Layer: 0
+  m_Name: Pie Slice Sensor
+  m_TagString: sensor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &453685998
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 453685997}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1112589371}
+  m_RootOrder: 1
+--- !u!114 &453685999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 453685997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cdfcacee9d2f244682b4644f8f4fe38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UItext: {fileID: 1783666468}
+  SliceBoundaries:
+  - 45
+  - 135
+  - 225
+  - 315
+  SliceDepth: 3.5
+--- !u!58 &453686000
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 453685997}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &583019899
 Prefab:
   m_ObjectHideFlags: 0
@@ -340,6 +398,47 @@ Prefab:
   m_RootGameObject: {fileID: 1288106620}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &588312064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 588312066}
+  - 114: {fileID: 588312065}
+  m_Layer: 0
+  m_Name: Agent Factory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &588312065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 588312064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e381ba78083553b4fb105cba90ef27d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnKey: 306
+  prefab: {fileID: 110794, guid: 081407d11854c814c89c52381c375598, type: 2}
+--- !u!4 &588312066
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 588312064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1 &615542056
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,7 +632,6 @@ GameObject:
   - 212: {fileID: 1112589370}
   - 114: {fileID: 1112589372}
   - 50: {fileID: 1112589373}
-  - 58: {fileID: 1112589374}
   m_Layer: 0
   m_Name: subject
   m_TagString: subject
@@ -574,7 +672,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 832601979}
-  - {fileID: 1278606280}
+  - {fileID: 453685998}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!114 &1112589372
@@ -608,75 +706,6 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!58 &1112589374
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1112589369}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Radius: 5
-  m_Center: {x: 0, y: 0}
---- !u!1 &1278606277
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1278606280}
-  - 58: {fileID: 1278606279}
-  - 114: {fileID: 1278606278}
-  m_Layer: 0
-  m_Name: Pie Slice Sensor
-  m_TagString: sensor
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1278606278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1278606277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cdfcacee9d2f244682b4644f8f4fe38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UItext: {fileID: 1783666468}
-  SliceBoundaries:
-  - 45
-  - 135
-  - 225
-  - 315
-  SliceDepth: 3.5
---- !u!58 &1278606279
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1278606277}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Radius: 2
-  m_Center: {x: 0, y: 0}
---- !u!4 &1278606280
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1278606277}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1112589371}
-  m_RootOrder: 1
 --- !u!1 &1288106620
 GameObject:
   m_ObjectHideFlags: 0
