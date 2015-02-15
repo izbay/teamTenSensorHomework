@@ -28,7 +28,7 @@ public class AdjacentAgentSensor : MonoBehaviour {
 	
 	void UpdateGUI ()
 	{
-		string output = "Detected Agents:\n";
+		string output = "Adjacent Agents:\n";
 		
 		foreach (Transform t in adjacentAgents)
 		{

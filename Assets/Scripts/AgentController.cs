@@ -7,6 +7,10 @@ public class AgentController : MonoBehaviour {
 	public float moveSpeed;
 	public KeyCode controlKey;
 	public KeyCode abortKey;
+	
+	private float curr_rot;
+	private float curr_x;
+	private float curr_y;
 
 	void Update () {
 		// Handle if W and S are both held.
@@ -32,5 +36,13 @@ public class AgentController : MonoBehaviour {
 			if (dir_rotation != 0)
 				transform.Rotate(dir_rotation * Vector3.forward * turnSpeed * 10 * Time.deltaTime);
 		}
+		
+		SavePosition();
+	}
+	
+	void SavePosition () {
+		curr_x = transform.position.x;
+		curr_y = transform.position.y;
+		curr_rot = transform.rotation.eulerAngles.z;
 	}
 }
