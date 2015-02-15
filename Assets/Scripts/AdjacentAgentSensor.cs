@@ -29,12 +29,13 @@ public class AdjacentAgentSensor : MonoBehaviour {
 	void UpdateGUI ()
 	{
 		string output = "Detected Agents:\n";
-		
+		double parent_rot = transform.parent.rotation.eulerAngles.z;
+
 		foreach (Transform t in adjacentAgents)
 		{
 			Vector3 distance = t.position - transform.position;
 			double bearing = ((distance.y>0)?1:-1) * Vector3.Angle(Vector3.right,distance);
-				   bearing = (bearing + 360) % 360;             
+			bearing = (bearing - parent_rot + 360) % 360;             
 			output = output + "D=" + distance.magnitude.ToString("F1");
 			output = output + ",B=" + bearing.ToString ("F1")+"\n";
 		}
