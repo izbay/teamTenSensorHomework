@@ -21,9 +21,9 @@ public class WallRangeSensor : MonoBehaviour {
 	void Update ()
 	{
 		//detects if the rays hit an object that doesnt belong tot he layer Ignore Raycast
-		frontRayHit = Physics2D.Raycast (transform.position, (transform.right)*range,1<<LayerMask.NameToLayer("Ignore Raycast"));
-		leftRayHit = Physics2D.Raycast (transform.position, (transform.up+(transform.right/2))*range,1<<LayerMask.NameToLayer("Ignore Raycast"));
-		rightRayHit = Physics2D.Raycast (transform.position, (-transform.up+(transform.right/2))*range,1<<LayerMask.NameToLayer("Ignore Raycast"));
+		frontRayHit = Physics2D.Raycast (transform.position, (transform.right),range);
+		leftRayHit = Physics2D.Raycast (transform.position, (transform.up+(transform.right/2)),range);
+		rightRayHit = Physics2D.Raycast (transform.position, (-transform.up+(transform.right/2)),range);
 
 		UpdateGUI();
 	}
@@ -38,7 +38,7 @@ public class WallRangeSensor : MonoBehaviour {
 			f=range;
 		} else {
 			Debug.DrawRay (transform.position, (transform.right)*range,Color.cyan);
-			output = output + "(" + frontRayHit.distance.ToString("F1") + ")";
+			output = output + "F:(" + frontRayHit.distance.ToString("F1") + ") ";
 			f=frontRayHit.distance;
 		}
 		//if the left ray has hit something, display the output and update the l float, else display normal ray and set l to range
@@ -47,7 +47,7 @@ public class WallRangeSensor : MonoBehaviour {
 			l=range;
 		} else {
 			Debug.DrawRay (transform.position, (transform.up+(transform.right/2))*range, Color.cyan);
-			output = output + "(" + leftRayHit.distance.ToString("F1") + ")";
+			output = output + "L:(" + leftRayHit.distance.ToString("F1") + ") ";
 			l=leftRayHit.distance;
 		}
 		//if the right ray has hit something, display the output and update the r float, else display normal ray and set r to range
@@ -56,7 +56,7 @@ public class WallRangeSensor : MonoBehaviour {
 			r=range;
 		} else {
 			Debug.DrawRay (transform.position, (-transform.up+(transform.right/2))*range, Color.cyan);
-			output = output + "(" + rightRayHit.distance.ToString("F1") + ")";
+			output = output + "R:(" + rightRayHit.distance.ToString("F1") + ") ";
 			r=rightRayHit.distance;
 		}
 

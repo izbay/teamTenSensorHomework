@@ -872,9 +872,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UItext: {fileID: 484918112}
   range: 2
-  leftRayHit: 0
-  rightRayHit: 0
-  frontRayHit: 0
+  l: 5
+  f: 5
+  r: 5
 --- !u!1 &1112589369
 GameObject:
   m_ObjectHideFlags: 0
