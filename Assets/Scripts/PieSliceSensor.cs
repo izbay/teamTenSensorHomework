@@ -8,7 +8,6 @@ public class PieSliceSensor : MonoBehaviour {
 	public Text UItext;
 	public double[] SliceBoundaries = new double[4];
 	public double SliceDepth;
-
 	private int[] SliceOccupants = new int[4];
 	private List<Transform> adjacentAgents = new List<Transform> ();
 	
@@ -48,7 +47,7 @@ public class PieSliceSensor : MonoBehaviour {
 		int idx = 0;
 		foreach (int cnt in SliceOccupants)
 		{
-			output += "[" + idx + "] = " + (cnt / 10.0).ToString("F1") + "\n";
+			output += "[" + idx + "] = " + (cnt / (adjacentAgents.Count + 0.01)).ToString("F1") + "\n";
 			SliceOccupants[idx++] = 0;
 		}
 
